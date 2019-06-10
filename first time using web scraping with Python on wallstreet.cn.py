@@ -7,7 +7,7 @@
 import requests
 import pandas as pd
 import time
-target_date = '2015-06-01' ##输入你想获得最早的新闻日期
+target_date = '2015-06-01' ##输入你想获得最早的新闻日期,这里设定为2015年6月1日
 input_data = "平安证券" ##输入你想要的关键字，这里假定为平安。
 theme = input_data.replace(" ","+")
 
@@ -59,12 +59,11 @@ for g in range(1, times+1):
     
     qingli3 = lambda x:time.strftime("%Y-%m-%d", time.localtime(x))
     data1[0] = data1[0].apply(qingli3)
-    
+    ##把不规则的网址（uri）去除
     index1 = data1[data1[4].str.contains('api')].index
     data2 = data1.drop(index1)
     data3 = data2.reset_index(drop=True)
     info.append(data3)
-    ###########################################################################################   
     ##确认日期
     date_last = data1.iloc[-1,0]
     if date_last < target_date:
