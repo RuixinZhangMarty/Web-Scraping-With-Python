@@ -22,7 +22,7 @@ for key, value in json_data.items():
     if key == 'data':
         raw_data = value['items']
         Count = value['count']
-times = int(Count/100)+1 ##如果cursor的值加一，根据访问uri1获得的新数据为100个，故根据
+times = int(Count/100)+1 ##如果cursor的值加一，根据访问uri1获得的新数据为100个，故根据变量Count的结果获取要遍历的次数，注意此处cursor的值不是0-indexed的
 
 info = []
 for g in range(1, times+1):
