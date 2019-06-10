@@ -70,7 +70,7 @@ for g in range(1, times+1):
         break
 
 info_all = pd.concat(info).reset_index(drop=True)
-info_final = info_all[info_all[0]>=target_date]
+info_final = info_all[info_all[0] >= target_date]
 info_final.columns = ['发布日期', '标题', '来源', '摘要', '外链']
 mulu = 'C://Users//z//Desktop//朱老师探索性项目'
 dizhi= mulu+'//关键字为'+input_data+',起始时间为'+target_date+'的华尔街见闻新闻.xlsx'
